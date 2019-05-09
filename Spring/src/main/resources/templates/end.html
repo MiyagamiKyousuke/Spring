@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>end</title>
+<script defer
+	src="https://use.fontawesome.com/releases/v5.7.2/js/solid.js"
+	integrity="sha384-6FXzJ8R8IC4v/SKPI8oOcRrUkJU8uvFK6YJ4eDY11bJQz4lRw5/wGthflEOX8hjL"
+	crossorigin="anonymous"></script>
+<script defer
+	src="https://use.fontawesome.com/releases/v5.7.2/js/fontawesome.js"
+	integrity="sha384-xl26xwG2NVtJDw2/96Lmg09++ZjrXPc89j0j7JHjLOdSwHDHPHiucUjfllW0Ywrq"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="row">
+		<h1 class="text-center">ユーザーリスト</h1>
+		<div class="container">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">id</th>
+						<th scope="col">名前</th>
+						<th scope="col">ログインID</th>
+						<th scope="col">パスワード</th>
+					</tr>
+				</thead>
+				<tr th:each="users :${userList}">
+					<th scope="col">[[${users.id}]]</th>
+					<th scope="col">[[${users.name}]]</th>
+					<th scope="col">[[${users.loginId}]]</th>
+					<th scope="col">[[${#dates.format(users.createDate, 'yyyy/MM/dd HH:mm:ss')}]]</th>
+				</tr>
+				<tr>
+					<th scope="col"><a class="btn btn-success" th:href="@{/branchInsert}">新規登録</a></th>
+				</tr>
+			</table>
+		</div>
+
+
+	</div>
+</body>
+</html>

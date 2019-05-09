@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>start</title>
+<script defer
+	src="https://use.fontawesome.com/releases/v5.7.2/js/solid.js"
+	integrity="sha384-6FXzJ8R8IC4v/SKPI8oOcRrUkJU8uvFK6YJ4eDY11bJQz4lRw5/wGthflEOX8hjL"
+	crossorigin="anonymous"></script>
+<script defer
+	src="https://use.fontawesome.com/releases/v5.7.2/js/fontawesome.js"
+	integrity="sha384-xl26xwG2NVtJDw2/96Lmg09++ZjrXPc89j0j7JHjLOdSwHDHPHiucUjfllW0Ywrq"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+		<div class="wrapper">
+			<form action="#" th:action="@{/login}" th:object="${loginForm}" method="post">
+				<h3 class="form-signin-heading">ログイン画面</h3>
+				<hr class="colorgraph">
+				<br> <input type="text" class="form-control" th:field="*{loginId}"
+					placeholder="LoginId" autofocus="" /> <input
+					type="password" class="form-control" th:field="*{loginPass}"
+					placeholder="Password" />
+
+				<button class="btn btn-lg btn-primary btn-block" name="Submit"
+					value="Login" type="Submit">Login</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
