@@ -34,6 +34,11 @@
 			<div class="col-6 offset-md-3">
 				<form action="#" th:action="@{/registConfirm}"
 					th:object="${registConfirmForm}" method="post">
+					<ul th:if="${#fields.hasErrors('*{name}')}" th:errors="*{name}" class="text-danger"></ul>
+					<ul th:if="${#fields.hasErrors('*{address}')}" th:errors="*{address}" class="text-danger"></ul>
+					<ul th:if="${#fields.hasErrors('*{loginId}')}" th:errors="*{loginId}" class="text-danger"></ul>
+					<ul th:if="${#fields.hasErrors('*{loginPass}')}" th:errors="*{loginPass}" class="text-danger"></ul>
+					<ul th:if="${#fields.hasErrors('*{loginPass2}')}" th:errors="*{loginPass2}" class="text-danger"></ul>
 					<div class="card">
 						<div class="card-body">
 

@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.entity.Task;
-import com.example.demo.entity.TaskRepository;
+import com.example.demo.entity.User;
+import com.example.demo.entity.UserRepository;
 import com.example.demo.form.LoginFormBeans;
 @Controller
 public class StaHello {
 
 	@Autowired
-	TaskRepository taskRepo;
+	UserRepository userRepo;
 
 	@ModelAttribute("loginForm")
 	 public LoginFormBeans setupForm() {
@@ -33,7 +33,7 @@ public class StaHello {
 	}
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public ModelAndView requestLoginForm(@ModelAttribute LoginFormBeans loginForm,ModelAndView model) {
-		List<Task> userList = taskRepo.findAll();
+		List<User> userList = userRepo.findAll();
 
 		model.addObject("userList", userList);
 		model.setViewName("end");

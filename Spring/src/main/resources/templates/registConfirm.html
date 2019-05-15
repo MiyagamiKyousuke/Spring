@@ -44,7 +44,7 @@
 											<label for="username">名前</label>
 											<div class="input-group">
 												<input type="text" class="form-control" id="username"
-													placeholder="名前 " th:value="*{name}" readonly>
+													placeholder="名前 " th:value="*{name}" th:field="*{name}" readonly>
 												<div class="invalid-feedback" style="width: 100%;">
 													Your username is required.</div>
 											</div>
@@ -54,7 +54,7 @@
 											<label for="username">住所</label>
 											<div class="input-group">
 												<input type="text" class="form-control" id="username"
-													placeholder="住所" th:value="*{address}" readonly>
+													placeholder="住所" th:value="*{address}" th:field="*{address}" readonly>
 												<div class="invalid-feedback" style="width: 100%;">
 													Your username is required.</div>
 											</div>
@@ -64,7 +64,7 @@
 											<label for="username">ログインID</label>
 											<div class="input-group">
 												<input type="text" class="form-control" id="username"
-													placeholder="LoginID" th:value="*{loginId}" readonly>
+													placeholder="LoginID" th:value="*{loginId}" th:field="*{loginId}" readonly>
 												<div class="invalid-feedback" style="width: 100%;">
 													Your username is required.</div>
 											</div>
@@ -73,22 +73,22 @@
 											<label for="username">パスワード</label>
 											<div class="input-group">
 												<input type="text" class="form-control" id="username"
-													placeholder="LoginID" th:value="*{loginPass}" readonly>
+													placeholder="LoginID" th:value="*{loginPass}" th:field="*{loginPass}" readonly>
 												<div class="invalid-feedback" style="width: 100%;">
 													Your username is required.</div>
 											</div>
 
 										</div>
-										<!-- <div class="mb-3">
+										<div class="mb-3">
 											<label for="username">パスワード(確認)</label>
 											<div class="input-group">
 												<input type="text" class="form-control" id="username"
-													placeholder="LoginID" th:value="*{loginPass2}" readonly>
+													placeholder="LoginID" th:value="*{loginPass2}" th:field="*{loginPass2}" readonly>
 												<div class="invalid-feedback" style="width: 100%;">
 													Your username is required.</div>
 											</div>
 
-										</div> -->
+										</div>
 									</div>
 								</div>
 

@@ -18,8 +18,10 @@ public class Regist {
 
 	}
 	@RequestMapping(value = "/branchInsert", method = RequestMethod.GET)
-	public String returnRegist() {
-		return "regist";
+	public ModelAndView returnRegist(@ModelAttribute RegistConfirmForm registConfirmForm, ModelAndView model) {
+		model.addObject(registConfirmForm);
+		model.setViewName("regist");
+		return model;
 
 	}
 
@@ -27,11 +29,10 @@ public class Regist {
 	@RequestMapping(value = "registConfirm", method = RequestMethod.POST)
 	public ModelAndView registCheck(@Validated @ModelAttribute RegistConfirmForm registConfirmForm, BindingResult bindingResult, ModelAndView model) {
 
-//		if(bindingResult.hasErrors()) {
-//
-//			model.setViewName("redirect:regist");
-//			return model;
-//		}
+		if(bindingResult.hasErrors()) {
+
+			return returnRegist(registConfirmForm, model);
+		}
 //
 //		if(registConfirmForm.getLoginPass().equals(registConfirmForm.getLoginPass2())) {
 //			bindingResult.rejectValue("date", "validation.password-nomatch");
